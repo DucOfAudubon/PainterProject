@@ -35,7 +35,9 @@ public class Command {
                 return new PrintCommand(elems);
             case "mkdir":
                 return new MkDirCommand(elems);
-            /** Save this for when I have more time
+            /** Save this for when I have more time. Which means probably never.
+             * But here's the idea: Check if dir has directories. Cd into first directory. Rerun that until there are no dirs
+             * Then, delete the files of the dir you're in. Then, cd up one, run that loop again.
             case "rm`":
                 return new RMRecCommand(elems);
              */
