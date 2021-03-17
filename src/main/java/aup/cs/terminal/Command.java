@@ -35,6 +35,10 @@ public class Command {
                 return new PrintCommand(elems);
             case "mkdir":
                 return new MkDirCommand(elems);
+            /** Save this for when I have more time
+            case "rm`":
+                return new RMRecCommand(elems);
+             */
             default:
                 throw new TerminalParsingException("Command: " + com + " is not known");
         }

@@ -17,7 +17,7 @@ public class RMCommand extends Command {
         if(!f.exists()){
             throw new TerminalExecutionException(" Can't delete a file that doesn't exist");
         }
-        if(f.list().length > 0){
+        if(f.listFiles().length > 0){
             throw new TerminalExecutionException(" This command only deletes empty files");
         }
         f.delete();
