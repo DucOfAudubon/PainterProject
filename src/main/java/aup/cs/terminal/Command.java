@@ -31,10 +31,8 @@ public class Command {
                 return new LSCommand();
             case "rm":
                 return new RMCommand(elems);
-            /**
             case "cat":
                 return new PrintCommand(elems);
-             */
             case "mkdir":
                 return new MkDirCommand(elems);
             default:
