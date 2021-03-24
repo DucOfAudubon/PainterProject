@@ -14,8 +14,8 @@ public class Painter {
     }
 
     private static void init() throws NodeOverflow {
-        pane = new Panel(20,30);
-        Panel pane2 = new Panel(10,20);
+        pane = new Panel(20,50);
+        Panel pane2 = new Panel(18,40);
         try{
             pane.add(new TShape(3,5));
             pane2.add(new TShape(8,7));

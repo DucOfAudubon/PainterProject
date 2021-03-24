@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Panel extends Node{
     private ArrayList<Node> nodes;
+    private int containedWidth = 1;
 
     public Panel(){
         this(10, 10);
@@ -14,33 +15,27 @@ public class Panel extends Node{
         this.nodes = new ArrayList<Node>();
     }
 
-    public void add(Node nodeToAdd){
-        this.nodes.add(nodeToAdd);
+    public void add(Node nodeToAdd) throws NodeOverflow {
+        nodes.add(nodeToAdd);
+        containedWidth += nodeToAdd.getWidth() + 1;
+        if(containedWidth >= getWidth() - 1 || nodeToAdd.getHeight() >= getHeight() - 1){
+            throw new NodeOverflow();
+        }
     }
 
     public void printLine(int line){
         if((line == 1) || (line == getHeight())){
-            for(int i = 0; i < getWidth(); i++){
-                System.out.print("-");
-            }
+            printWidth('-');
         }
         else if(line <= getHeight()){
-             System.out.print("|");
-             int acc = 0;
-             for (int i = 0; i < nodes.size(); i++) {
-                 nodes.get(i).printLine(line-1);
-                 System.out.print(" ");
-                 int widthHere = nodes.get(i).getWidth();
-                 acc += widthHere + 2;
-             }
-             int numOfSpaces = getWidth() - acc;
-             String spaces = new String(new char[numOfSpaces]).replace("\0", " ");
-             System.out.print(spaces);
-             System.out.print("|");
+            printInterior(nodes, line);
         }
         else{
-            String spaces2 = new String(new char[getWidth()]).replace("\0", " ");
-            System.out.print(spaces2);
+            printSpaces(getWidth());
         }
+    }
+
+    public ArrayList<Node> sort(){
+
     }
 }

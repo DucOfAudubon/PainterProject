@@ -3,10 +3,10 @@ package aup.cs.paint;
 public class ShapeIllegalArgumentException extends Exception{
 
     public ShapeIllegalArgumentException(){
-        super("ShapeIllegalArgument Exception: error on execution");
+        super("ShapeIllegalArgument Exception: ");
     }
 
     public ShapeIllegalArgumentException(String msg){
-        super("ShapeIllegalArgument Exception: error on execution " + msg);
+        super("ShapeIllegalArgument Exception: " + msg);
     }
 }

@@ -21,17 +21,15 @@ public class IShape extends Shape{
 
     public void printLine(int line){
         if((line == 1) || (line == getHeight())){
-            for(int i = 0; i < getWidth(); i++){
-                System.out.print("*");
-            }
+            printWidth('*');
         }
         else if(line <= getHeight()){
-            String spaces = new String(new char[getWidth()/2]).replace("\0", " ");;
-            System.out.print(spaces + "*" + spaces);
+            printSpaces(getWidth()/2);
+            printSymbol();
+            printSpaces(getWidth()/2);
         }
         else{
-            String spaces2 = new String(new char[getWidth()]).replace("\0", " ");
-            System.out.print(spaces2);
+            printWidth(' ');
         }
     }
 

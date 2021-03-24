@@ -1,6 +1,7 @@
 package aup.cs.paint;
 
 public abstract class Shape extends Node{
+    private char printSymbol = 'c';
 
     public Shape(){
         this(10, 10);
