@@ -29,6 +29,7 @@ public class Painter {
     private static void printToScreen(){
         for(int i = 1; i <= pane.getHeight(); i++){
             pane.printLine(i);
+            System.out.println("");
         }
     }
 }

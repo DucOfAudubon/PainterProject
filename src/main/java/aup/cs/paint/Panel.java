@@ -11,6 +11,7 @@ public class Panel extends Node{
 
     public Panel(int height, int width){
         super(height, width);
+        this.nodes = new ArrayList<Node>();
     }
 
     public void add(Node nodeToAdd){
@@ -23,12 +24,23 @@ public class Panel extends Node{
                 System.out.print("-");
             }
         }
-        else{
+        else if(line <= getHeight()){
              System.out.print("|");
+             int acc = 0;
              for (int i = 0; i < nodes.size(); i++) {
                  nodes.get(i).printLine(line-1);
+                 System.out.print(" ");
+                 int widthHere = nodes.get(i).getWidth();
+                 acc += widthHere + 2;
              }
-             System.out.println("|");
+             int numOfSpaces = getWidth() - acc;
+             String spaces = new String(new char[numOfSpaces]).replace("\0", " ");
+             System.out.print(spaces);
+             System.out.print("|");
+        }
+        else{
+            String spaces2 = new String(new char[getWidth()]).replace("\0", " ");
+            System.out.print(spaces2);
         }
     }
 }

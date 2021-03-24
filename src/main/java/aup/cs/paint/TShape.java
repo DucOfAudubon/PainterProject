@@ -25,9 +25,13 @@ public class TShape extends Shape{
                 System.out.print("*");
             }
         }
-        else{
-            String spaces = new String(new char[getWidth()/2]).replace("\0", "-");
+        else if(line <= getHeight()){
+            String spaces = new String(new char[getWidth()/2]).replace("\0", " ");
             System.out.print(spaces + "*" + spaces);
+        }
+        else{
+            String spaces2 = new String(new char[getWidth()]).replace("\0", " ");
+            System.out.print(spaces2);
         }
     }
 
