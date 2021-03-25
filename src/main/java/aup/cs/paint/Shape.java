@@ -8,7 +8,7 @@ public abstract class Shape extends Node{
 
     public Shape(int height, int width){
         super(height, width);
-        this.printSymbol = '*';
+        this.printSymbol = '*'; //Shapes should be painted with *
     }
 
 }
