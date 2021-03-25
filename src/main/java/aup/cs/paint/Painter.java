@@ -7,6 +7,7 @@ public class Painter {
         Painter p = new Painter();
         try{
             p.init();
+            p.pane.sort();
             p.printToScreen();
         } catch (NodeOverflow no) {
             System.err.println("Elements overflow from painter");

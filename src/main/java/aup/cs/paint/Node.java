@@ -2,10 +2,10 @@ package aup.cs.paint;
 
 import java.util.ArrayList;
 
-public abstract class Node {
+public abstract class Node implements Cloneable{
     private int height;
     private int width;
-    private char printSymbol;
+    protected char printSymbol;
 
     public Node(){
         this(10, 10);
@@ -47,11 +47,20 @@ public abstract class Node {
         System.out.print("|");
     }
 
+    public Node clone() throws CloneNotSupportedException {
+        Node clonedNode = (Node) super.clone();
+        clonedNode.height = this.height;
+        clonedNode.width = this.width;
+        return clonedNode;
+    }
+
     /**
      * prints to screen 1 line of the node (panel or shape)
      * @param line
      */
     public abstract void printLine(int line);
+
+    public void sort(){}
 
     public int getHeight(){
         return height;

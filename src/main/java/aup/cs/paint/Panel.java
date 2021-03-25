@@ -1,6 +1,8 @@
 package aup.cs.paint;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Panel extends Node{
     private ArrayList<Node> nodes;
@@ -35,7 +37,15 @@ public class Panel extends Node{
         }
     }
 
-    public ArrayList<Node> sort(){
-
+    @Override
+    public void sort(){
+        Collections.sort(nodes, new Comparator<Node>(){
+            public int compare(Node n1, Node n2) {
+                return n1.getHeight() - n2.getHeight();
+            }
+        });
+        for(Node n : nodes){
+            n.sort();
+        }
     }
 }
